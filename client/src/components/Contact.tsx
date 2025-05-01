@@ -50,10 +50,10 @@ export default function Contact() {
             <span className="text-sm font-medium tracking-wider text-accent uppercase">Contact Us</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-primary mb-4">
-            Ready to <span className="text-accent">Build Your Dream?</span>
+            Ready to <span className="text-secondary">Build Your Dream?</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Let's transform your home into the sanctuary you deserve. Connect with Morrison Construction, LLC—and build a legacy you'll love.
+            Let's Talk About Your Next Project. Whether you're planning a ground-up build or a luxury remodel, our Boise-based team is ready to bring your vision to life.
           </p>
         </div>
         
@@ -211,55 +211,56 @@ export default function Contact() {
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-accent/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
-                    <MapPin className="h-5 w-5 text-accent" />
+                  <div className="bg-secondary/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
+                    <MapPin className="h-5 w-5 text-secondary" />
                   </div>
                   <div>
                     <h4 className="font-medium text-primary text-base mb-1">Address</h4>
                     <address className="not-italic text-gray-600 text-sm">
-                      13601 W McMillan Rd Suite#102-268<br />
+                      13601 W McMillan Rd Suite #102-268<br />
                       Boise, ID 83713
                     </address>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-accent/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
-                    <Phone className="h-5 w-5 text-accent" />
+                  <div className="bg-secondary/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
+                    <Phone className="h-5 w-5 text-secondary" />
                   </div>
                   <div>
                     <h4 className="font-medium text-primary text-base mb-1">Phone</h4>
                     <p className="text-sm">
-                      <a href="tel:+12089990030" className="text-gray-600 hover:text-accent transition-colors">
-                        (208) 999-0030
+                      <a href="tel:+12089977766" className="text-gray-600 hover:text-accent transition-colors">
+                        (208) 997-7766
                       </a>
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-accent/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
-                    <Mail className="h-5 w-5 text-accent" />
+                  <div className="bg-secondary/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
+                    <Mail className="h-5 w-5 text-secondary" />
                   </div>
                   <div>
                     <h4 className="font-medium text-primary text-base mb-1">Email</h4>
                     <p className="text-sm">
-                      <a href="mailto:info@morrisonconstruction.com" className="text-gray-600 hover:text-accent transition-colors break-all">
-                        info@morrisonconstruction.com
+                      <a href="mailto:info@highrollerconstruction.com" className="text-gray-600 hover:text-accent transition-colors break-all">
+                        info@highrollerconstruction.com
                       </a>
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-accent/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
-                    <Clock className="h-5 w-5 text-accent" />
+                  <div className="bg-secondary/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
+                    <Clock className="h-5 w-5 text-secondary" />
                   </div>
                   <div>
                     <h4 className="font-medium text-primary text-base mb-1">Business Hours</h4>
                     <div className="text-gray-600 text-sm">
-                      <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                      <p>Saturday - Sunday: Closed</p>
+                      <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                      <p>Saturday: 9:00 AM - 2:00 PM</p>
+                      <p>Sunday: Closed</p>
                     </div>
                   </div>
                 </div>
@@ -269,28 +270,28 @@ export default function Contact() {
                 <h4 className="font-medium text-primary mb-4">Follow Us</h4>
                 <div className="flex space-x-3">
                   <a 
-                    href="https://facebook.com" 
+                    href="https://facebook.com/HighRollerConstruction" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="bg-accent/10 hover:bg-accent p-2.5 rounded-lg transition-colors duration-300 text-accent hover:text-white" 
+                    className="bg-secondary/10 hover:bg-secondary p-2.5 rounded-lg transition-colors duration-300 text-secondary hover:text-white" 
                     aria-label="Follow us on Facebook"
                   >
                     <Facebook className="h-4 w-4" />
                   </a>
                   <a 
-                    href="https://instagram.com" 
+                    href="https://instagram.com/HighRollerConst" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="bg-accent/10 hover:bg-accent p-2.5 rounded-lg transition-colors duration-300 text-accent hover:text-white" 
+                    className="bg-secondary/10 hover:bg-secondary p-2.5 rounded-lg transition-colors duration-300 text-secondary hover:text-white" 
                     aria-label="Follow us on Instagram"
                   >
                     <Instagram className="h-4 w-4" />
                   </a>
                   <a 
-                    href="https://linkedin.com" 
+                    href="https://linkedin.com/company/high-roller-construction" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="bg-accent/10 hover:bg-accent p-2.5 rounded-lg transition-colors duration-300 text-accent hover:text-white" 
+                    className="bg-secondary/10 hover:bg-secondary p-2.5 rounded-lg transition-colors duration-300 text-secondary hover:text-white" 
                     aria-label="Connect with us on LinkedIn"
                   >
                     <Linkedin className="h-4 w-4" />
@@ -324,7 +325,7 @@ export default function Contact() {
               allowFullScreen 
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Morrison Construction Location"
+              title="High Roller Construction Location"
               className="w-full h-full"
             />
           </div>

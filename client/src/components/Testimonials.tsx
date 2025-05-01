@@ -27,55 +27,55 @@ export default function Testimonials() {
   const testimonials = [
     [
       {
-        quote: "Morrison Construction transformed our outdated home into a modern masterpiece. Their attention to detail, communication throughout the process, and quality of work exceeded our expectations.",
-        author: "James & Dana Wilson",
+        quote: "From our very first meeting, Micah and Emily listened to every detail. The end result—our dream kitchen—exceeded all expectations!",
+        author: "Alex & Priya S.",
         location: "Boise, ID",
-        initials: "JD",
+        initials: "AP",
         project: "Kitchen Remodel",
         rating: 5
       },
       {
-        quote: "As a small business owner, I needed a contractor who understood our vision and budget. Morrison Construction delivered our retail space on time and on budget. Their team was professional and responsive.",
-        author: "Sarah Rodriguez",
+        quote: "Transparent pricing, clear timelines, and top-notch craftsmanship. High Roller truly lives up to its name.",
+        author: "Marcus R.",
         location: "Meridian, ID", 
-        initials: "SR",
-        project: "Commercial Build",
-        rating: 5
-      }
-    ],
-    [
-      {
-        quote: "Morrison Construction built our dream mountain cabin with expertise and care. The craftsmanship is exceptional, and they managed the challenges of our remote location with ease.",
-        author: "Michael & Tina Johnson",
-        location: "McCall, ID",
-        initials: "MT",
+        initials: "MR",
         project: "Custom Home",
         rating: 5
+      }
+    ],
+    [
+      {
+        quote: "Their team turned our unfinished basement into the ultimate family hangout. Professional, punctual, and perfect execution.",
+        author: "Jenna L.",
+        location: "Eagle, ID",
+        initials: "JL",
+        project: "Basement Finish",
+        rating: 5
       },
       {
-        quote: "I've worked with many contractors over 20 years in real estate development, and Morrison stands out for their integrity, quality, and reliable timelines. They're now our go-to construction partner.",
-        author: "David Patterson",
-        location: "Eagle, ID",
-        initials: "DP",
-        project: "Commercial Development",
+        quote: "Outstanding service and relentless attention to detail. Highly recommended for any luxury build or remodel.",
+        author: "Carlos & Mia V.",
+        location: "Nampa, ID",
+        initials: "CM",
+        project: "Custom Home",
         rating: 5
       }
     ],
     [
       {
-        quote: "Our bathroom renovation was a fantastic experience from start to finish. The Morrison team gave us exactly what we wanted and handled a few surprises with professionalism and transparency.",
-        author: "Elena & Mark Thompson",
+        quote: "From day one, the team was professional and detail-oriented. Our new kitchen is nothing short of spectacular.",
+        author: "Alex & Priya S.",
         location: "Boise, ID",
-        initials: "EM",
-        project: "Bathroom Remodel",
+        initials: "AP",
+        project: "Kitchen Remodel",
         rating: 5
       },
       {
-        quote: "Morrison Construction designed and built the most amazing outdoor living space for our family. The covered patio, fireplace, and outdoor kitchen are now where we spend most of our time.",
-        author: "Robert Adams",
-        location: "Nampa, ID", 
-        initials: "RA",
-        project: "Outdoor Living",
+        quote: "They delivered on every promise—and then some. Highly recommend for anyone wanting top-tier craftsmanship.",
+        author: "Marcus R.",
+        location: "Meridian, ID", 
+        initials: "MR",
+        project: "Home Addition",
         rating: 5
       }
     ]
@@ -102,30 +102,30 @@ export default function Testimonials() {
             transition={{ duration: 0.5 }}
           >
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-md mb-4">
-              <MessageSquare className="h-4 w-4 mr-2 text-accent" />
-              <span className="text-sm font-medium tracking-wider text-accent uppercase">Testimonials</span>
+              <MessageSquare className="h-4 w-4 mr-2 text-secondary" />
+              <span className="text-sm font-medium tracking-wider text-secondary uppercase">Testimonials</span>
             </div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold mb-4 text-white">
-              What Our <span className="text-accent">Clients</span> Say
+              What Our <span className="text-secondary">Clients</span> Say
             </h2>
             
             <p className="text-lg text-gray-200 max-w-2xl">
-              Don't just take our word for it. Hear from our satisfied clients about their experience working with Morrison Construction.
+              Don't just take our word for it. Hear from our satisfied clients about their experience working with High Roller Construction.
             </p>
           </motion.div>
           
           <div className="flex space-x-2">
             <button 
               onClick={goToPrevSlide}
-              className="p-3 rounded-full bg-white/10 hover:bg-accent/80 text-white transition-colors shadow-sm"
+              className="p-3 rounded-full bg-white/10 hover:bg-secondary/80 text-white transition-colors shadow-sm"
               aria-label="Previous testimonials"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button 
               onClick={goToNextSlide}
-              className="p-3 rounded-full bg-white/10 hover:bg-accent/80 text-white transition-colors shadow-sm"
+              className="p-3 rounded-full bg-white/10 hover:bg-secondary/80 text-white transition-colors shadow-sm"
               aria-label="Next testimonials"
             >
               <ChevronRight className="h-5 w-5" />
@@ -167,7 +167,7 @@ export default function Testimonials() {
                 key={index}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   activeSlide === index 
-                    ? 'bg-accent w-8' 
+                    ? 'bg-secondary w-8' 
                     : 'bg-white/30 hover:bg-white/50'
                 }`}
                 onClick={() => handleManualNavigation(index)}

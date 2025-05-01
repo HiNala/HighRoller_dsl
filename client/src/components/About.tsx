@@ -5,22 +5,22 @@ import { Users, Gem, Building, BadgeCheck, Award, Calendar } from 'lucide-react'
 export default function About() {
   const companyValues = [
     {
-      icon: <Gem className="h-6 w-6 text-accent" />,
+      icon: <Gem className="h-6 w-6 text-secondary" />,
       title: "Excellence",
       description: "We strive for excellence in every detail, from planning to final touches."
     },
     {
-      icon: <Users className="h-6 w-6 text-accent" />,
+      icon: <Users className="h-6 w-6 text-secondary" />,
       title: "Collaboration",
       description: "We believe in true partnerships with our clients throughout the construction process."
     },
     {
-      icon: <BadgeCheck className="h-6 w-6 text-accent" />,
+      icon: <BadgeCheck className="h-6 w-6 text-secondary" />,
       title: "Integrity",
       description: "We maintain the highest standards of honesty, transparency and accountability."
     },
     {
-      icon: <Award className="h-6 w-6 text-accent" />,
+      icon: <Award className="h-6 w-6 text-secondary" />,
       title: "Craftsmanship",
       description: "We take pride in our workmanship and attention to detail on every project."
     }
@@ -30,14 +30,26 @@ export default function About() {
     {
       name: "Micah Morrison",
       role: "President & Construction Manager",
-      bio: "From swinging his first hammer at 16 to leading complex residential and commercial projects, Micah combines hands-on expertise with a Construction Management degree. His obsession with structural integrity and craftsmanship means your project is in capable, detail-driven hands.",
+      bio: "Started framing homes at 16; now oversees every project from bids to final walkthrough. With deep expertise in high-end residential construction, Micah ensures your project meets the highest standards of quality and craftsmanship.",
       image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
     },
     {
-      name: "Jacci Morrison",
-      role: "Vice President & Award-Winning Interior Designer",
-      bio: "With over 20 years of interior design accolades, Jacci transforms spaces into personalized sanctuaries. She listens, inspires, and collaborates—ensuring every color, material, and layout aligns with your vision and enhances your daily life.",
+      name: "Emily Carter",
+      role: "Lead Project Superintendent",
+      bio: "With 12 years in high-end residential builds, Emily is renowned for on-budget, on-schedule delivery. Her keen eye for detail and expertise in managing complex projects ensures your home is built to the highest standards.",
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      name: "David Nguyen",
+      role: "Design Coordinator",
+      bio: "Architecture graduate with a passion for blending modern aesthetics and functionality. David works closely with clients to ensure every design element aligns with your vision while optimizing for both beauty and practicality.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      name: "Laura Martinez",
+      role: "Client Liaison",
+      bio: "Your dedicated point of contact—ensuring seamless updates, scheduling, and support throughout your project. Laura's commitment to clear communication means you're always informed about your project's progress.",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
     }
   ];
 
@@ -45,7 +57,7 @@ export default function About() {
     <section id="about" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-neutral overflow-hidden bg-texture-paper">
       {/* Subtle background pattern - replaced with class-based pattern */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -bottom-20 right-0 w-72 h-72 rounded-full bg-accent/[0.03] blur-3xl"></div>
+        <div className="absolute -bottom-20 right-0 w-72 h-72 rounded-full bg-secondary/[0.03] blur-3xl"></div>
         <div className="absolute -top-20 left-0 w-80 h-80 rounded-full bg-primary/[0.04] blur-3xl"></div>
       </div>
 
@@ -63,38 +75,38 @@ export default function About() {
             </div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-primary mb-6">
-              Building <span className="text-accent">Dreams</span> into Lasting Homes
+              Building <span className="text-secondary">Dreams</span> into Lasting Homes
             </h2>
             
             <p className="text-gray-600 mb-5 leading-relaxed">
-              At Morrison Construction, where family values meet professional excellence. For over two decades, we've been crafting 
-              and revitalizing homes throughout the Treasure Valley, ensuring each project reflects the unique spirit of Idaho living.
+              At High Roller Construction, where premium craftsmanship meets exceptional service. We specialize in bringing your vision to life through 
+              custom home construction and luxury remodels throughout the Boise Metro area and Treasure Valley.
             </p>
             
             <div className="flex items-start space-x-3 mb-5">
-              <Building className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
+              <Building className="h-6 w-6 text-secondary mt-1 flex-shrink-0" />
               <p className="text-gray-600">
-                From the first blueprint to the final walkthrough, our mission is to deliver an experience defined by integrity, 
-                collaboration, and exceptional workmanship.
+                From your first inspiration meeting to the final walkthrough, our mission is to deliver an experience defined by integrity, 
+                transparency, and uncompromising quality.
               </p>
             </div>
             
             <div className="flex items-start space-x-3 mb-6">
-              <Calendar className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
+              <Calendar className="h-6 w-6 text-secondary mt-1 flex-shrink-0" />
               <p className="text-gray-600">
-                Whether you're starting fresh with a custom build or reimagining your current space, our team is here to 
-                guide you every step of the way—bringing your vision to life on time, on budget, and beyond expectations.
+                Whether you're embarking on a ground-up custom build or a high-end remodel, our Boise-based team is committed to guiding you 
+                through every milestone—on time, on budget, and exceeding expectations.
               </p>
             </div>
             
             <div className="flex items-center space-x-5 mb-8 py-4 px-6 bg-white rounded-xl shadow-sm">
               <div className="flex space-x-1">
-                <div className="bg-accent w-1.5 h-12 rounded-full"></div>
-                <div className="bg-accent/60 w-1.5 h-12 rounded-full"></div>
-                <div className="bg-accent/30 w-1.5 h-12 rounded-full"></div>
+                <div className="bg-secondary w-1.5 h-12 rounded-full"></div>
+                <div className="bg-secondary/60 w-1.5 h-12 rounded-full"></div>
+                <div className="bg-secondary/30 w-1.5 h-12 rounded-full"></div>
               </div>
               <blockquote className="text-primary italic font-medium text-lg">
-                "We don't just build structures, we build relationships and communities."
+                "We don't just build homes, we build relationships and exceed expectations."
               </blockquote>
             </div>
             
@@ -173,8 +185,8 @@ export default function About() {
               </div>
             </div>
             
-            <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-accent/10 rounded-full z-0"></div>
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent/5 rounded-full z-0"></div>
+            <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-secondary/10 rounded-full z-0"></div>
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-secondary/5 rounded-full z-0"></div>
           </motion.div>
         </div>
         
@@ -208,7 +220,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
               >
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-primary mb-2">{value.title}</h3>

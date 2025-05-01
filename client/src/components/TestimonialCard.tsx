@@ -27,9 +27,9 @@ export default function TestimonialCard({
       transition={{ duration: 0.5 }}
       whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
     >
-      <Quote className="h-8 w-8 text-accent/20 absolute top-6 right-6" />
+      <Quote className="h-8 w-8 text-secondary/20 absolute top-6 right-6" />
       
-      <div className="flex items-center space-x-1 text-accent mb-5">
+      <div className="flex items-center space-x-1 text-secondary mb-5">
         {[...Array(5)].map((_, i) => (
           <Star 
             key={i} 
@@ -47,15 +47,15 @@ export default function TestimonialCard({
       
       {project && (
         <div className="mb-4 text-sm">
-          <span className="bg-accent/10 text-accent px-3 py-1 rounded-full">
+          <span className="bg-secondary/10 text-secondary px-3 py-1 rounded-full">
             {project}
           </span>
         </div>
       )}
       
       <div className="flex items-center space-x-4 pt-4 border-t border-gray-100">
-        <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shadow-sm">
-          <span className="text-accent font-semibold">{initials}</span>
+        <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center shadow-sm">
+          <span className="text-secondary font-semibold">{initials}</span>
         </div>
         <div>
           <p className="font-semibold text-primary">{author}</p>

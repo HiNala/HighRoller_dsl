@@ -110,8 +110,8 @@ export default function Header() {
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-3 group">
             <Logo />
-            <span className="font-display text-xl font-semibold text-primary transition-colors duration-200 group-hover:text-accent">
-              Morrison Construction
+            <span className="font-display text-xl font-semibold text-primary transition-colors duration-200 group-hover:text-secondary">
+              High Roller Construction
             </span>
           </Link>
           
@@ -121,20 +121,20 @@ export default function Header() {
                 key={item.name} 
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-primary hover:text-accent relative text-base font-medium tracking-wide transition-colors duration-200 py-2"
+                className="text-primary hover:text-secondary relative text-base font-medium tracking-wide transition-colors duration-200 py-2"
               >
                 {item.name}
-                <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-accent scale-x-0 transition-transform origin-left hover:scale-x-100"></span>
+                <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-secondary scale-x-0 transition-transform origin-left hover:scale-x-100"></span>
               </Link>
             ))}
             
             <a 
-              href="tel:+12089990030"
+              href="tel:+12089977766"
               className="flex items-center space-x-2 bg-accent text-white px-4 py-2 rounded-md hover:bg-accent/90 transition-colors shadow-sm"
-              aria-label="Call us at (208) 999-0030"
+              aria-label="Call us at (208) 997-7766"
             >
               <Phone className="h-4 w-4" />
-              <span className="font-medium">(208) 999-0030</span>
+              <span className="font-medium">(208) 997-7766</span>
             </a>
           </nav>
           
@@ -142,7 +142,7 @@ export default function Header() {
             <button 
               type="button" 
               onClick={toggleMobileMenu}
-              className="text-primary hover:text-accent transition-colors duration-200"
+              className="text-primary hover:text-secondary transition-colors duration-200"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
@@ -179,7 +179,7 @@ export default function Header() {
                       key={item.name}
                       href={item.href}
                       onClick={(e) => handleNavClick(e, item.href)}
-                      className="text-primary hover:text-accent hover:bg-neutral/30 transition-colors duration-200 font-medium py-3 px-4 rounded-md flex items-center text-lg"
+                      className="text-primary hover:text-secondary hover:bg-neutral/30 transition-colors duration-200 font-medium py-3 px-4 rounded-md flex items-center text-lg"
                     >
                       {item.name}
                     </Link>
@@ -188,12 +188,12 @@ export default function Header() {
                   <div className="h-px bg-neutral/20 my-2"></div>
                   
                   <a 
-                    href="tel:+12089990030"
+                    href="tel:+12089977766"
                     className="flex items-center justify-center space-x-3 bg-accent text-white mt-2 px-4 py-3.5 rounded-md hover:bg-accent/90 transition-colors shadow-sm"
-                    aria-label="Call us at (208) 999-0030"
+                    aria-label="Call us at (208) 997-7766"
                   >
                     <Phone className="h-5 w-5" />
-                    <span className="font-medium">(208) 999-0030</span>
+                    <span className="font-medium">(208) 997-7766</span>
                   </a>
                 </div>
               </motion.div>

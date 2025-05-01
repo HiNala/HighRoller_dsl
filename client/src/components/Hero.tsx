@@ -48,7 +48,7 @@ function ScrollIndicator() {
             repeatType: "loop",
           }}
         >
-          <ChevronDown className="h-5 w-5 text-accent" />
+          <ChevronDown className="h-5 w-5 text-secondary" />
         </motion.div>
       </motion.a>
     </div>
@@ -259,7 +259,7 @@ export default function Hero() {
         {/* Simple loading indicator if no images are loaded */}
         {!imagesLoaded.some(loaded => loaded) && (
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-12 h-12 border-4 border-accent border-t-transparent rounded-full animate-spin"></div>
+            <div className="w-12 h-12 border-4 border-secondary border-t-transparent rounded-full animate-spin"></div>
           </div>
         )}
       </div>
@@ -284,7 +284,7 @@ export default function Hero() {
               }}
               className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-all duration-300 ${
                 index === currentImageIndex 
-                  ? 'bg-accent w-3 md:w-4' 
+                  ? 'bg-secondary w-3 md:w-4' 
                   : 'bg-white/50 hover:bg-white/70'
               } ${!imagesLoaded[index] || imageErrors[index] ? 'opacity-50 cursor-not-allowed' : ''}`}
               aria-label={`View slide ${index + 1}`}
@@ -303,8 +303,8 @@ export default function Hero() {
             animate="visible"
             className="mb-3 md:mb-4"
           >
-            <span className="inline-block bg-accent/90 px-3 py-1.5 md:px-4 md:py-2 rounded-md text-xs md:text-sm font-medium tracking-wider uppercase text-white">
-              Morrison Construction LLC
+            <span className="inline-block bg-secondary/90 px-3 py-1.5 md:px-4 md:py-2 rounded-md text-xs md:text-sm font-medium tracking-wider uppercase text-white">
+              High Roller Construction LLC
             </span>
           </motion.div>
           
@@ -317,9 +317,9 @@ export default function Hero() {
           >
             <span className="relative z-10 inline-block">
               <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">Building a</span>{" "}
-              <span className="text-accent drop-shadow-[0_2px_4px_rgba(216,143,44,0.3)]">Better</span>{" "}
+              <span className="text-secondary drop-shadow-[0_2px_4px_rgba(212,175,55,0.3)]">Better</span>{" "}
               <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">Boise</span>
-              <span className="absolute -bottom-3 -left-2 -right-2 h-2 bg-accent/40 -z-10 blur-xl"></span>
+              <span className="absolute -bottom-3 -left-2 -right-2 h-2 bg-secondary/40 -z-10 blur-xl"></span>
             </span>
           </motion.h1>
           
@@ -330,8 +330,7 @@ export default function Hero() {
             animate="visible"
             className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-6 md:mb-8 text-gray-200 leading-relaxed px-1"
           >
-            Where family values meet professional excellence. For over two decades, we've been crafting and revitalizing 
-            homes throughout the Treasure Valley, ensuring each project reflects the unique spirit of Idaho living.
+            Premium craftsmanship meets exceptional service. We specialize in bringing your vision to life through custom home construction and luxury remodels throughout the Boise Metro area and Treasure Valley.
           </motion.p>
           
           <motion.div 
@@ -410,7 +409,7 @@ export default function Hero() {
               repeatType: "loop",
             }}
           >
-            <ChevronDown className="h-4 w-4 md:h-5 md:w-5 text-accent" />
+            <ChevronDown className="h-4 w-4 md:h-5 md:w-5 text-secondary" />
           </motion.div>
         </motion.a>
       </div>
