@@ -104,7 +104,7 @@ export default function WhyChooseUs() {
             <span className="text-sm font-medium tracking-wider text-accent uppercase">Why Choose Us</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-primary mb-4">
-            Why Choose <span className="text-accent">Morrison Construction?</span>
+            Why Choose <span className="text-accent">High Roller Construction?</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             From the first blueprint to the final walkthrough, our mission is to deliver an experience defined 

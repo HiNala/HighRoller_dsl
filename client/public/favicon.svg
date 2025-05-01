@@ -1,11 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <!-- Background -->
-  <rect width="64" height="64" rx="12" fill="#2C2C2C"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" fill="#2C2C2C" rx="8" />
   
-  <!-- Letter M with accent color -->
-  <path d="M14 16v32h8V28.8L32 40l10-11.2V48h8V16h-8L32 28.8 22 16h-8z" fill="#D4AF37"/>
+  <!-- H letter -->
+  <path d="M12 16v32h6V36h10v12h6V16h-6v14H18V16h-6z" fill="#B85C38"/>
+  
+  <!-- R letter -->
+  <path d="M38 16v32h6V36h4l4 12h6l-5-14c2.5-1.5 4-4 4-7 0-5-4-11-11-11H38zm6 6h4c2.5 0 5 1.5 5 5s-2.5 5-5 5h-4V22z" fill="#B85C38"/>
   
   <!-- Subtle accent lines -->
-  <rect x="12" y="54" width="40" height="2" fill="#D4AF37" opacity="0.7"/>
-  <rect x="12" y="8" width="40" height="2" fill="#D4AF37" opacity="0.7"/>
+  <rect x="12" y="54" width="40" height="2" fill="#B85C38" opacity="0.7"/>
+  <rect x="12" y="8" width="40" height="2" fill="#B85C38" opacity="0.7"/>
 </svg> 
