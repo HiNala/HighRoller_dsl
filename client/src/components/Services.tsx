@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ChefHat, Bath, Home, Palmtree, PencilRuler, Paintbrush } from 'lucide-react';
+import { UtensilsCrossed, Bath, Home, Palmtree, Warehouse, Hammer } from 'lucide-react';
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -9,11 +9,10 @@ interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
-  features: string[];
   delay?: number;
 }
 
-const ServiceCard = ({ icon, title, description, features, delay = 0 }: ServiceCardProps) => {
+const ServiceCard = ({ icon, title, description, delay = 0 }: ServiceCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -41,20 +40,9 @@ const ServiceCard = ({ icon, title, description, features, delay = 0 }: ServiceC
             </div>
           </div>
           
-          {/* Card body with description and features */}
+          {/* Card body with description */}
           <div className="p-6 flex flex-col flex-grow">
-            <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
-            
-            <div className="mt-auto">
-              <ul className="space-y-3">
-                {features.map((feature, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="text-accent mr-3 mt-0.5">•</span>
-                    <span className="text-gray-600">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <p className="text-gray-600 leading-relaxed">{description}</p>
           </div>
         </div>
       </Card>
@@ -65,70 +53,34 @@ const ServiceCard = ({ icon, title, description, features, delay = 0 }: ServiceC
 export default function Services() {
   const services = [
     {
-      icon: <ChefHat className="h-6 w-6" />,
-      title: "Kitchen Remodels",
-      description: "Transform your kitchen into a beautiful and functional space with our expert design and construction services.",
-      features: [
-        "Custom cabinetry and countertops",
-        "Modern appliance integration",
-        "Open concept designs",
-        "Lighting and electrical upgrades"
-      ]
+      icon: <Home className="h-6 w-6" />,
+      title: "Custom Home Builds",
+      description: "Bring your vision to life with a home that's 100% you—inside and out."
+    },
+    {
+      icon: <Hammer className="h-6 w-6" />,
+      title: "Whole-Home Remodels",
+      description: "Reimagine your space: contemporary, efficient, and perfectly yours."
+    },
+    {
+      icon: <UtensilsCrossed className="h-6 w-6" />,
+      title: "Kitchen Transformations",
+      description: "Cook, entertain, and connect in a kitchen designed for your lifestyle."
     },
     {
       icon: <Bath className="h-6 w-6" />,
-      title: "Bathroom Remodels",
-      description: "Create a spa-like retreat with our bathroom renovation services that blend luxury and practicality.",
-      features: [
-        "Custom showers and tubs",
-        "Vanity and storage solutions", 
-        "Tile work and fixtures",
-        "Waterproofing and ventilation"
-      ]
+      title: "Bathroom Retreats",
+      description: "Relax and recharge with spa-inspired designs and luxury fixtures."
     },
     {
-      icon: <Home className="h-6 w-6" />,
-      title: "Home Additions",
-      description: "Expand your living space with custom additions that seamlessly integrate with your existing home architecture.",
-      features: [
-        "Room additions and expansions",
-        "Second story additions",
-        "In-law suites and guest rooms",
-        "Structural engineering"
-      ]
+      icon: <Warehouse className="h-6 w-6" />,
+      title: "Basement Finishes",
+      description: "Unlock bonus living space—home theater, gym, or guest suite."
     },
     {
       icon: <Palmtree className="h-6 w-6" />,
-      title: "Outdoor Living",
-      description: "Extend your living space into the outdoors with beautiful and functional exterior spaces for relaxation and entertainment.",
-      features: [
-        "Custom decks and patios",
-        "Outdoor kitchens and fireplaces",
-        "Pergolas and covered areas",
-        "Landscape integration"
-      ]
-    },
-    {
-      icon: <PencilRuler className="h-6 w-6" />,
-      title: "Design Services",
-      description: "Our professional design team will help bring your vision to life with detailed plans tailored to your lifestyle and preferences.",
-      features: [
-        "3D modeling and visualization",
-        "Material and finish selection",
-        "Space planning and optimization",
-        "Permit-ready documentation"
-      ]
-    },
-    {
-      icon: <Paintbrush className="h-6 w-6" />,
-      title: "Interior Renovations",
-      description: "Revitalize your interior spaces with our comprehensive renovation services that enhance both aesthetics and functionality.",
-      features: [
-        "Wall removal and reconfiguration",
-        "Flooring and trim installation",
-        "Custom built-ins and cabinetry",
-        "Painting and finishing"
-      ]
+      title: "Outdoor Kitchens & Living",
+      description: "Extend your living space into the fresh Idaho air and make every season memorable."
     }
   ];
 
@@ -154,13 +106,14 @@ export default function Services() {
               <span className="text-sm font-medium tracking-wider text-accent uppercase">Our Services</span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-primary mb-4">
-              Comprehensive <span className="text-accent">Construction</span> Services
+              Our Signature <span className="text-accent">Services</span>
             </h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-6 relative">
               <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-accent rounded-full"></div>
             </div>
             <p className="text-lg text-gray-600">
-              Specializing in residential remodeling projects, we transform kitchens, bathrooms, and living spaces to make your dream home a reality, with attention to detail and exceptional craftsmanship.
+              Whether you're starting fresh with a custom build or reimagining your current space, our team is here 
+              to guide you every step of the way—bringing your vision to life on time, on budget, and beyond expectations.
             </p>
           </motion.div>
         </div>
@@ -172,7 +125,6 @@ export default function Services() {
               icon={service.icon}
               title={service.title}
               description={service.description}
-              features={service.features}
               delay={index}
             />
           ))}
@@ -197,7 +149,7 @@ export default function Services() {
             }}
             className="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-md shadow-md inline-flex items-center font-medium transition-all duration-300 relative overflow-hidden group"
           >
-            <span className="relative z-10">Request a Quote</span>
+            <span className="relative z-10">Transform Your Home Today</span>
             <span className="absolute inset-0 bg-gradient-to-r from-accent to-accent/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-0"></span>
           </a>
         </motion.div>

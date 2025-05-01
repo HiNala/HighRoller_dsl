@@ -50,11 +50,38 @@ export default function Contact() {
             <span className="text-sm font-medium tracking-wider text-accent uppercase">Contact Us</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-primary mb-4">
-            Let's <span className="text-accent">Connect</span>
+            Ready to <span className="text-accent">Build Your Dream?</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Ready to transform your space? Get in touch with our team and let's bring your vision to life.
+            Let's transform your home into the sanctuary you deserve. Connect with Morrison Construction, LLC—and build a legacy you'll love.
           </p>
+        </div>
+        
+        {/* Process Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 relative">
+            <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold text-lg">1</div>
+            <h3 className="text-xl font-display font-semibold text-primary mb-3 mt-2">Tell us about your vision</h3>
+            <p className="text-gray-600">
+              Complete a brief questionnaire so we can understand your style, needs, and budget.
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 relative">
+            <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold text-lg">2</div>
+            <h3 className="text-xl font-display font-semibold text-primary mb-3 mt-2">Receive your personalized estimate</h3>
+            <p className="text-gray-600">
+              Our transparent bid breaks down every detail—empowering you to prioritize what matters most.
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 relative">
+            <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold text-lg">3</div>
+            <h3 className="text-xl font-display font-semibold text-primary mb-3 mt-2">Watch your project unfold</h3>
+            <p className="text-gray-600">
+              From ground-breaking to ribbon-cutting, we keep you informed and in control.
+            </p>
+          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
@@ -124,11 +151,12 @@ export default function Contact() {
                         required
                       >
                         <option value="" disabled>Select project type</option>
-                        <option value="kitchen">Kitchen Remodel</option>
-                        <option value="bathroom">Bathroom Remodel</option>
-                        <option value="addition">Home Addition</option>
-                        <option value="outdoor">Outdoor Living Space</option>
-                        <option value="commercial">Commercial Construction</option>
+                        <option value="custom">Custom Home Build</option>
+                        <option value="whole-home">Whole-Home Remodel</option>
+                        <option value="kitchen">Kitchen Transformation</option>
+                        <option value="bathroom">Bathroom Retreat</option>
+                        <option value="basement">Basement Finish</option>
+                        <option value="outdoor">Outdoor Kitchen & Living</option>
                         <option value="other">Other</option>
                       </select>
                     </div>
@@ -139,7 +167,7 @@ export default function Contact() {
                     <textarea 
                       id="message" 
                       name="message" 
-                      placeholder="Tell us about your project..." 
+                      placeholder="Tell us about your vision..." 
                       rows={4}
                       value={formState.message}
                       onChange={handleChange}
@@ -161,7 +189,7 @@ export default function Contact() {
                     ) : (
                       <>
                         <Send className="h-5 w-5 mr-2" />
-                        Send Message
+                        Start Your Dream Project
                       </>
                     )}
                   </button>

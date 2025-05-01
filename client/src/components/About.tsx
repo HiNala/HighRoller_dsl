@@ -29,16 +29,14 @@ export default function About() {
   const teamMembers = [
     {
       name: "Micah Morrison",
-      role: "Founder & CEO",
-      qualification: "B.S. in Construction Management",
-      years: "20+ years experience",
+      role: "President & Construction Manager",
+      bio: "From swinging his first hammer at 16 to leading complex residential and commercial projects, Micah combines hands-on expertise with a Construction Management degree. His obsession with structural integrity and craftsmanship means your project is in capable, detail-driven hands.",
       image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
     },
     {
       name: "Jacci Morrison",
-      role: "Co-Founder & Design Director",
-      qualification: "B.A. in Interior Design",
-      years: "15+ years experience",
+      role: "Vice President & Award-Winning Interior Designer",
+      bio: "With over 20 years of interior design accolades, Jacci transforms spaces into personalized sanctuaries. She listens, inspires, and collaborates—ensuring every color, material, and layout aligns with your vision and enhances your daily life.",
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
     }
   ];
@@ -65,28 +63,27 @@ export default function About() {
             </div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-primary mb-6">
-              Bringing <span className="text-accent">Dreams</span> to Life Since 2005
+              Building <span className="text-accent">Dreams</span> into Lasting Homes
             </h2>
             
             <p className="text-gray-600 mb-5 leading-relaxed">
-              Morrison Construction is a premier full-service residential company specializing in kitchen & bathroom remodels, 
-              additions, and outdoor living spaces, as well as comprehensive design services.
+              At Morrison Construction, where family values meet professional excellence. For over two decades, we've been crafting 
+              and revitalizing homes throughout the Treasure Valley, ensuring each project reflects the unique spirit of Idaho living.
             </p>
             
             <div className="flex items-start space-x-3 mb-5">
               <Building className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
               <p className="text-gray-600">
-                Micah and Jacci Morrison hold Bachelor's degrees in Construction Management & Interior Design, 
-                which combined with over 30 years of experience, makes them an exceptional team dedicated to 
-                bringing their clients' visions to reality.
+                From the first blueprint to the final walkthrough, our mission is to deliver an experience defined by integrity, 
+                collaboration, and exceptional workmanship.
               </p>
             </div>
             
             <div className="flex items-start space-x-3 mb-6">
               <Calendar className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
               <p className="text-gray-600">
-                Founded in 2005, our team brings decades of combined experience, local knowledge, and a passion for 
-                craftsmanship to every project we undertake in the Boise area and beyond.
+                Whether you're starting fresh with a custom build or reimagining your current space, our team is here to 
+                guide you every step of the way—bringing your vision to life on time, on budget, and beyond expectations.
               </p>
             </div>
             
@@ -234,10 +231,10 @@ export default function About() {
               <span className="text-sm font-medium tracking-wider text-accent uppercase">Our Team</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-semibold text-primary mb-4">
-              Meet Our Leadership
+              Meet Your Dedicated Team
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              The visionaries behind Morrison Construction bring decades of experience and passion to every project.
+              The experienced professionals who will bring your vision to life with expertise and passion.
             </p>
           </div>
           
@@ -261,14 +258,7 @@ export default function About() {
                 <div className="md:w-3/5 p-6 flex flex-col justify-center">
                   <h3 className="text-2xl font-display font-semibold text-primary mb-1">{member.name}</h3>
                   <p className="text-accent font-medium mb-3">{member.role}</p>
-                  <p className="text-gray-500 mb-1 flex items-center">
-                    <BadgeCheck className="h-4 w-4 text-accent mr-2" />
-                    {member.qualification}
-                  </p>
-                  <p className="text-gray-500 flex items-center">
-                    <Calendar className="h-4 w-4 text-accent mr-2" />
-                    {member.years}
-                  </p>
+                  <p className="text-gray-600 leading-relaxed">{member.bio}</p>
                 </div>
               </motion.div>
             ))}

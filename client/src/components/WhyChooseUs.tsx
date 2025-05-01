@@ -2,17 +2,18 @@ import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
-import { ShieldCheck, Clock, CreditCard, Users, SquareCheckBig, MessageSquare } from "lucide-react";
+import { Sparkles, MessageSquare, LightbulbIcon } from "lucide-react";
 
 interface BenefitCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
+  bulletPoints?: string[];
   className?: string;
   delay?: number;
 }
 
-const BenefitCard = ({ icon, title, description, className, delay = 0 }: BenefitCardProps) => {
+const BenefitCard = ({ icon, title, description, bulletPoints = [], className, delay = 0 }: BenefitCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -30,7 +31,18 @@ const BenefitCard = ({ icon, title, description, className, delay = 0 }: Benefit
           {icon}
         </div>
         <h3 className="mb-2 text-xl font-display font-semibold text-primary">{title}</h3>
-        <p className="text-gray-600 leading-relaxed">{description}</p>
+        <p className="text-gray-600 leading-relaxed mb-4">{description}</p>
+        
+        {bulletPoints.length > 0 && (
+          <ul className="space-y-2">
+            {bulletPoints.map((point, idx) => (
+              <li key={idx} className="flex items-start">
+                <span className="text-accent mr-2 mt-1 text-lg">•</span>
+                <span className="text-gray-600 text-sm">{point}</span>
+              </li>
+            ))}
+          </ul>
+        )}
       </Card>
     </motion.div>
   );
@@ -39,34 +51,31 @@ const BenefitCard = ({ icon, title, description, className, delay = 0 }: Benefit
 export default function WhyChooseUs() {
   const benefits = [
     {
-      icon: <ShieldCheck className="h-6 w-6" />,
-      title: "Quality Assurance",
-      description: "Every project undergoes rigorous quality checks at each stage of construction to ensure lasting results that stand the test of time."
-    },
-    {
-      icon: <Clock className="h-6 w-6" />,
-      title: "On-Time Delivery",
-      description: "We understand the importance of timelines and consistently deliver projects on schedule without compromising on quality or attention to detail."
-    },
-    {
-      icon: <CreditCard className="h-6 w-6" />,
-      title: "Transparent Pricing",
-      description: "No hidden costs or surprises. We provide detailed estimates upfront and maintain clear communication about your project's financial aspects."
-    },
-    {
-      icon: <Users className="h-6 w-6" />,
-      title: "Expert Team",
-      description: "Our crew of skilled professionals brings decades of combined experience to every project, ensuring superior craftsmanship in all we do."
-    },
-    {
-      icon: <SquareCheckBig className="h-6 w-6" />,
-      title: "Custom Solutions",
-      description: "We tailor our approach to meet your specific needs, creating personalized solutions that perfectly align with your vision and requirements."
+      icon: <Sparkles className="h-6 w-6" />,
+      title: "Unmatched Craftsmanship",
+      description: "Every home we build or remodel is a testament to precision, durability, and timeless design.",
+      bulletPoints: [
+        "Meticulous framing, flawless finishes, and premium materials ensure your investment stands strong for generations.",
+        "Our in-house experts treat every nail, joint, and surface as if it were their own home."
+      ]
     },
     {
       icon: <MessageSquare className="h-6 w-6" />,
-      title: "Clear Communication",
-      description: "We believe in keeping you informed every step of the way, with responsive communication and regular updates throughout your project."
+      title: "Transparent Communication",
+      description: "Feel confident at every step with clear, consistent updates.",
+      bulletPoints: [
+        "Project milestones delivered on schedule—no surprises, just satisfaction.",
+        "Your questions answered promptly by the team behind the tools, not an automated line."
+      ]
+    },
+    {
+      icon: <LightbulbIcon className="h-6 w-6" />,
+      title: "Tailored Value",
+      description: "Get the highest return on your investment with honest pricing and zero hidden fees.",
+      bulletPoints: [
+        "Detailed, line-item bids let you customize scope and budget with full clarity.",
+        "We leverage local partnerships for cost savings—and pass those savings directly to you."
+      ]
     }
   ];
 
@@ -95,20 +104,22 @@ export default function WhyChooseUs() {
             <span className="text-sm font-medium tracking-wider text-accent uppercase">Why Choose Us</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-primary mb-4">
-            The Morrison <span className="text-accent">Advantage</span>
+            Why Choose <span className="text-accent">Morrison Construction?</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Our commitment to quality craftsmanship, transparent communication, and attention to detail sets us apart from the competition.
+            From the first blueprint to the final walkthrough, our mission is to deliver an experience defined 
+            by integrity, collaboration, and exceptional workmanship.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {benefits.map((benefit, index) => (
             <BenefitCard
               key={index}
               icon={benefit.icon}
               title={benefit.title}
               description={benefit.description}
+              bulletPoints={benefit.bulletPoints}
               delay={index}
               className="group"
             />
@@ -123,7 +134,7 @@ export default function WhyChooseUs() {
           className="mt-16 text-center"
         >
           <p className="mx-auto max-w-2xl text-lg font-medium text-primary mb-6">
-            Ready to experience the Morrison Construction difference?
+            Ready to transform your home into the sanctuary you deserve?
           </p>
           <motion.a
             href="#contact"
@@ -139,7 +150,7 @@ export default function WhyChooseUs() {
             whileTap={{ scale: 0.95 }}
             className="inline-block rounded-md bg-accent hover:bg-accent/90 px-8 py-3 text-white font-medium shadow-md transition-all hover:shadow-lg relative overflow-hidden"
           >
-            <span className="relative z-10">Get Your Free Estimate</span>
+            <span className="relative z-10">Start Your Project Today</span>
             <span className="absolute inset-0 bg-gradient-to-r from-accent to-accent/90 opacity-0 hover:opacity-100 transition-opacity duration-300 -z-0"></span>
           </motion.a>
         </motion.div>

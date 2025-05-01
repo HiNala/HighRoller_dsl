@@ -267,8 +267,8 @@ export default function Hero() {
           >
             <span className="relative z-10 inline-block">
               <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">Building</span>{" "}
-              <span className="text-accent drop-shadow-[0_2px_4px_rgba(216,143,44,0.3)]">Boise</span>{" "}
-              <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">Better</span>
+              <span className="text-accent drop-shadow-[0_2px_4px_rgba(216,143,44,0.3)]">Dreams</span>{" "}
+              <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">Into Homes</span>
               <span className="absolute -bottom-3 -left-2 -right-2 h-2 bg-accent/40 -z-10 blur-xl"></span>
             </span>
           </motion.h1>
@@ -280,8 +280,8 @@ export default function Hero() {
             animate="visible"
             className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-6 md:mb-8 text-gray-200 leading-relaxed px-1"
           >
-            We specialize in high-quality residential and commercial construction across Idaho, 
-            delivering exceptional craftsmanship and attention to detail.
+            Where family values meet professional excellence. For over two decades, we've been crafting and revitalizing 
+            homes throughout the Treasure Valley, ensuring each project reflects the unique spirit of Idaho living.
           </motion.p>
           
           <motion.div 
@@ -301,7 +301,7 @@ export default function Hero() {
               }}
               className="group bg-accent hover:bg-accent/90 text-white font-medium px-5 py-3 sm:px-6 sm:py-3 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-sm sm:text-base w-full sm:w-auto"
             >
-              Get a Free Estimate
+              Start Your Dream Project
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <button 
@@ -315,7 +315,7 @@ export default function Hero() {
               className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-medium px-5 py-3 sm:px-6 sm:py-3 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-sm sm:text-base w-full sm:w-auto"
             >
               <Home className="mr-2 h-4 w-4" />
-              View Our Projects
+              Explore Our Work
             </button>
           </motion.div>
         </div>
