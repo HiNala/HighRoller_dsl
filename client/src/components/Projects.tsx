@@ -1,12 +1,14 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import ProjectCard from './ProjectCard';
-import { ChevronRight } from 'lucide-react';
+import { ArrowRight, Filter } from 'lucide-react';
 
-type ProjectType = 'all' | 'residential' | 'commercial' | 'remodel';
+// Define a shared type that matches the ProjectCard component's type
+type ProjectCategory = 'residential' | 'commercial' | 'remodel' | 'outdoor';
+type FilterType = 'all' | ProjectCategory;
 
 export default function Projects() {
-  const [activeFilter, setActiveFilter] = useState<ProjectType>('all');
+  const [activeFilter, setActiveFilter] = useState<FilterType>('all');
 
   const projects = [
     {
@@ -15,6 +17,7 @@ export default function Projects() {
       title: 'Modern Farmhouse Estate',
       description: 'A 4,500 sq ft custom home with premium finishes and sustainable features, completed in Eagle, ID.',
       completedDate: 'Jan 2025',
+      location: 'Eagle, ID',
       type: 'residential'
     },
     {
@@ -23,6 +26,7 @@ export default function Projects() {
       title: 'Downtown Business Center',
       description: 'A modern 3-story office complex with sustainable design and collaborative workspaces in Boise.',
       completedDate: 'Nov 2024',
+      location: 'Boise, ID',
       type: 'commercial'
     },
     {
@@ -31,6 +35,7 @@ export default function Projects() {
       title: 'Historic Home Renovation',
       description: 'Complete restoration of a 1920s craftsman home, preserving character while modernizing amenities.',
       completedDate: 'Mar 2025',
+      location: 'Meridian, ID',
       type: 'remodel'
     },
     {
@@ -39,7 +44,26 @@ export default function Projects() {
       title: 'Riverfront Restaurant',
       description: 'A stunning dining establishment featuring panoramic views of the Boise River, with indoor and outdoor seating.',
       completedDate: 'Feb 2025',
+      location: 'Boise, ID',
       type: 'commercial'
+    },
+    {
+      id: 5,
+      image: 'https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+      title: 'Luxury Backyard Retreat',
+      description: 'A complete outdoor living space with custom pool, outdoor kitchen, fire pit, and covered patio areas.',
+      completedDate: 'Apr 2025',
+      location: 'Nampa, ID',
+      type: 'outdoor'
+    },
+    {
+      id: 6,
+      image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+      title: 'Open Concept Kitchen Remodel',
+      description: 'Transformed a closed-off kitchen into a bright, open concept space with custom cabinetry and high-end finishes.',
+      completedDate: 'Dec 2024',
+      location: 'Boise, ID',
+      type: 'remodel'
     }
   ];
 
@@ -47,77 +71,118 @@ export default function Projects() {
     ? projects 
     : projects.filter(project => project.type === activeFilter);
 
+  const filters = [
+    { value: 'all', label: 'All Projects' },
+    { value: 'residential', label: 'Residential' },
+    { value: 'commercial', label: 'Commercial' },
+    { value: 'remodel', label: 'Remodels' },
+    { value: 'outdoor', label: 'Outdoor' }
+  ];
+
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-neutral">
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-screen-xl mx-auto">
-        <motion.div 
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-3xl md:text-4xl font-display font-semibold text-primary mb-4">Featured Projects</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">Browse our portfolio of exceptional residential and commercial construction projects across Idaho.</p>
-        </motion.div>
-        
-        <div className="mb-8 flex justify-center flex-wrap gap-2">
-          <button 
-            className={`px-4 py-2 rounded-full text-sm ${activeFilter === 'all' ? 'bg-accent text-white' : 'bg-white text-primary hover:bg-accent hover:text-white'} transition-all duration-200`}
-            onClick={() => setActiveFilter('all')}
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-16">
+          <motion.div 
+            className="max-w-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            All Projects
-          </button>
-          <button 
-            className={`px-4 py-2 rounded-full text-sm ${activeFilter === 'residential' ? 'bg-accent text-white' : 'bg-white text-primary hover:bg-accent hover:text-white'} transition-all duration-200`}
-            onClick={() => setActiveFilter('residential')}
+            <div className="inline-block bg-accent/10 px-4 py-2 rounded-md mb-4">
+              <span className="text-sm font-medium tracking-wider text-accent uppercase">Portfolio</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-primary mb-4">
+              Our <span className="text-accent">Showcase</span> Projects
+            </h2>
+            <p className="text-lg text-gray-600">
+              Browse our portfolio of exceptional residential and commercial construction projects across Idaho, 
+              featuring stunning designs, quality craftsmanship, and satisfied clients.
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            className="order-first md:order-last flex items-center"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Residential
-          </button>
-          <button 
-            className={`px-4 py-2 rounded-full text-sm ${activeFilter === 'commercial' ? 'bg-accent text-white' : 'bg-white text-primary hover:bg-accent hover:text-white'} transition-all duration-200`}
-            onClick={() => setActiveFilter('commercial')}
-          >
-            Commercial
-          </button>
-          <button 
-            className={`px-4 py-2 rounded-full text-sm ${activeFilter === 'remodel' ? 'bg-accent text-white' : 'bg-white text-primary hover:bg-accent hover:text-white'} transition-all duration-200`}
-            onClick={() => setActiveFilter('remodel')}
-          >
-            Remodels
-          </button>
+            <div className="relative z-10 bg-white shadow-sm rounded-lg p-2 inline-flex">
+              <div className="flex flex-wrap items-center gap-2">
+                <Filter className="h-5 w-5 text-gray-400 ml-2 mr-1 hidden sm:block" />
+                {filters.map((filter) => (
+                  <button 
+                    key={filter.value}
+                    className={`relative px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+                      activeFilter === filter.value 
+                        ? 'bg-accent text-white shadow-sm' 
+                        : 'text-gray-600 hover:bg-neutral'
+                    }`}
+                    onClick={() => setActiveFilter(filter.value as FilterType)}
+                    aria-label={`Filter by ${filter.label}`}
+                    aria-pressed={activeFilter === filter.value}
+                  >
+                    {filter.label}
+                    {activeFilter === filter.value && (
+                      <motion.span
+                        className="absolute inset-0 rounded-md"
+                        layoutId="activeFilterBubble"
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           layout
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          {filteredProjects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              image={project.image}
-              title={project.title}
-              description={project.description}
-              completedDate={project.completedDate}
-              type={project.type as ProjectType}
-            />
-          ))}
+          <AnimatePresence mode="wait">
+            {filteredProjects.map((project) => (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ProjectCard
+                  image={project.image}
+                  title={project.title}
+                  description={project.description}
+                  completedDate={project.completedDate}
+                  location={project.location}
+                  type={project.type as ProjectCategory}
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </motion.div>
         
         <motion.div 
-          className="text-center mt-10"
+          className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <button className="inline-flex items-center bg-primary hover:bg-accent text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all duration-200">
-            View All Projects
-            <ChevronRight className="h-5 w-5 ml-2" />
+          <button 
+            className="group bg-primary hover:bg-accent text-white font-medium px-8 py-3 rounded-md shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center"
+            aria-label="View all projects in our portfolio"
+          >
+            View Full Portfolio
+            <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </button>
         </motion.div>
       </div>
