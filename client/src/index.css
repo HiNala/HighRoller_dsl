@@ -95,11 +95,87 @@
   
   /* Background pattern utility */
   .bg-pattern-grid {
-    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1v38h38V1H1z' fill='%233C3C3C' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1v38h38V1H1z' fill='%233C3C3C' fill-opacity='0.01' fill-rule='evenodd'/%3E%3C/svg%3E");
   }
   
   .bg-pattern-dots {
-    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='1' fill='%23D88F2C' fill-opacity='0.1'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='0.5' fill='%23D88F2C' fill-opacity='0.05'/%3E%3C/svg%3E");
+  }
+  
+  /* New construction-themed background patterns */
+  .bg-pattern-blueprint {
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h200v200H0V0z' fill='transparent'/%3E%3Cpath stroke='%233C3C3C' stroke-width='0.1' fill='none' d='M50 50h100v100H50z'/%3E%3Ccircle cx='50' cy='50' r='1' fill='%233C3C3C' fill-opacity='0.02'/%3E%3Ccircle cx='150' cy='50' r='1' fill='%233C3C3C' fill-opacity='0.02'/%3E%3Ccircle cx='50' cy='150' r='1' fill='%233C3C3C' fill-opacity='0.02'/%3E%3Ccircle cx='150' cy='150' r='1' fill='%233C3C3C' fill-opacity='0.02'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+  
+  .bg-pattern-beams {
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='120' height='120' fill='transparent'/%3E%3Cpath d='M40 0v16l40 40 40-40V0' stroke='%23D88F2C' stroke-width='0.5' fill='none' opacity='0.03'/%3E%3Cpath d='M0 40h16l40 40-40 40H0' stroke='%23D88F2C' stroke-width='0.5' fill='none' opacity='0.03'/%3E%3Cpath d='M120 40h-16l-40 40 40 40h16' stroke='%23D88F2C' stroke-width='0.5' fill='none' opacity='0.03'/%3E%3Cpath d='M40 120v-16l40-40 40 40v16' stroke='%23D88F2C' stroke-width='0.5' fill='none' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 120px 120px;
+  }
+  
+  .bg-pattern-scaffold {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%233C3C3C' stroke-width='0.2' stroke-opacity='0.02'%3E%3Cpath d='M25,0 L25,100 M50,0 L50,100 M75,0 L75,100 M0,25 L100,25 M0,50 L100,50 M0,75 L100,75'/%3E%3C/g%3E%3Cg fill='%23D88F2C' fill-opacity='0.03'%3E%3Ccircle cx='25' cy='25' r='1'/%3E%3Ccircle cx='75' cy='25' r='1'/%3E%3Ccircle cx='25' cy='75' r='1'/%3E%3Ccircle cx='75' cy='75' r='1'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 100px 100px;
+  }
+  
+  /* Subtle texture patterns */
+  .bg-texture-concrete {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+  
+  .bg-texture-paper {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='5'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)'/%3E%3C/svg%3E");
+  }
+  
+  .bg-subtle-angles {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' stroke='%23D88F2C' stroke-width='0.5' stroke-opacity='0.02' d='M10,15 L90,15 M15,10 L15,90 M85,10 L85,90 M10,85 L90,85'/%3E%3Cpath fill='none' stroke='%23D88F2C' stroke-width='0.3' stroke-opacity='0.02' d='M10,10 L90,90 M90,10 L10,90'/%3E%3C/svg%3E");
+    background-size: 100px 100px;
+  }
+  
+  /* Decorative edge utilities */
+  .edge-diagonal-top {
+    position: relative;
+  }
+  
+  .edge-diagonal-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(135deg, var(--neutral) 50%, transparent 50%);
+    z-index: 1;
+  }
+  
+  .edge-diagonal-bottom {
+    position: relative;
+  }
+  
+  .edge-diagonal-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(315deg, var(--neutral) 50%, transparent 50%);
+    z-index: 1;
+  }
+  
+  .accent-edge {
+    position: relative;
+  }
+  
+  .accent-edge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: hsl(var(--accent));
   }
   
   /* Hover effect utilities */
@@ -124,6 +200,51 @@
     h2 {
       @apply text-2xl;
     }
+    
+    /* Improved touch targets for mobile */
+    button, 
+    a[role="button"],
+    .clickable {
+      @apply min-h-[44px] min-w-[44px];
+    }
+    
+    /* Adjust spacing for mobile */
+    .section-spacing-mobile {
+      @apply py-12;
+    }
+    
+    /* Better mobile scrolling */
+    .mobile-snap-scroll {
+      scroll-snap-type: y mandatory;
+    }
+    
+    .mobile-snap-scroll > section {
+      scroll-snap-align: start;
+    }
+  }
+  
+  /* Additional responsive utilities */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+  
+  /* Ensure images are responsive */
+  img.responsive {
+    @apply max-w-full h-auto object-cover;
+  }
+  
+  /* Stack elements on mobile that are side by side on desktop */
+  .stack-on-mobile {
+    @apply flex flex-col md:flex-row;
+  }
+  
+  /* Reverse stacking order on mobile */
+  .stack-reverse-on-mobile {
+    @apply flex flex-col-reverse md:flex-row;
   }
 }
 

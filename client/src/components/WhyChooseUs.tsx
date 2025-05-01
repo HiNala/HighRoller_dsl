@@ -71,24 +71,12 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section id="why-choose-us" className="relative overflow-hidden bg-neutral py-20 md:py-24">
+    <section id="why-choose-us" className="relative overflow-hidden bg-neutral py-20 md:py-24 bg-texture-concrete">
       {/* Enhanced background elements */}
       <div className="absolute inset-0 -z-10">
-        {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#3C3C3C" strokeWidth="0.5" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-          </svg>
-        </div>
-
         {/* Decorative elements */}
         <div className="hidden md:block absolute top-0 left-10 w-48 h-48 rounded-full bg-primary/[0.02] blur-2xl"></div>
-        <div className="hidden md:block absolute bottom-0 right-10 w-64 h-64 rounded-full bg-accent/[0.02] blur-3xl"></div>
+        <div className="hidden md:block absolute bottom-0 right-10 w-64 h-64 rounded-full bg-accent/[0.03] blur-3xl"></div>
         
         {/* Mobile-visible decorative elements */}
         <div className="md:hidden absolute top-1/4 left-0 w-32 h-32 rounded-full bg-primary/[0.03] blur-2xl"></div>

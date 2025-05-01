@@ -44,23 +44,11 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-neutral overflow-hidden">
-      {/* Subtle background pattern */}
+    <section id="about" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-neutral overflow-hidden bg-texture-paper">
+      {/* Subtle background pattern - replaced with class-based pattern */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="about-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.1" />
-            </pattern>
-            <linearGradient id="about-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#D88F2C" stopOpacity="0.05" />
-              <stop offset="100%" stopColor="#3C3C3C" stopOpacity="0.05" />
-            </linearGradient>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#about-grid)" />
-          <circle cx="10%" cy="30%" r="150" fill="url(#about-gradient)" />
-          <circle cx="90%" cy="70%" r="200" fill="url(#about-gradient)" />
-        </svg>
+        <div className="absolute -bottom-20 right-0 w-72 h-72 rounded-full bg-accent/[0.03] blur-3xl"></div>
+        <div className="absolute -top-20 left-0 w-80 h-80 rounded-full bg-primary/[0.04] blur-3xl"></div>
       </div>
 
       <div className="max-w-screen-xl mx-auto relative">
@@ -181,7 +169,7 @@ export default function About() {
               
               <div className="col-span-7 row-span-2 row-start-5 rounded-xl overflow-hidden shadow-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1628971599770-d8ba47372466?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                  src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                   alt="Commercial building project" 
                   className="w-full h-full object-cover"
                 />

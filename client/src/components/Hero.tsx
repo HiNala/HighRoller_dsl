@@ -56,12 +56,12 @@ function ScrollIndicator() {
 }
 
 export default function Hero() {
-  // Using more reliable and diverse construction images
+  // Using verified high-quality commercial construction images
   const backgroundImages = [
-    "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920", // Construction site with cranes
-    "https://images.pexels.com/photos/2138126/pexels-photo-2138126.jpeg?auto=compress&cs=tinysrgb&w=1920", // Aerial view of construction site
-    "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1920", // Modern building exterior
-    "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920" // Custom home exterior
+    "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=90&w=1920", // Commercial construction site with workers
+    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=90&w=1920", // Modern commercial building exterior
+    "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&q=90&w=1920", // Commercial construction interior
+    "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&q=90&w=1920" // Completed modern office building
   ];
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -70,7 +70,7 @@ export default function Hero() {
   const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
   
   // Fallback image if others fail
-  const fallbackImage = "https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg?auto=compress&cs=tinysrgb&w=1920";
+  const fallbackImage = "https://images.unsplash.com/photo-1502343019212-cc6a09783255?auto=format&fit=crop&q=90&w=1920"; // Commercial building with crane
   
   // Preload images
   useEffect(() => {
@@ -289,7 +289,7 @@ export default function Hero() {
             variants={fadeUpVariants}
             initial="hidden"
             animate="visible"
-            className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4"
+            className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4 w-full px-4 sm:px-0"
           >
             <button 
               onClick={() => {
@@ -299,7 +299,7 @@ export default function Hero() {
                   window.history.pushState(null, '', '#contact');
                 }
               }}
-              className="group bg-accent hover:bg-accent/90 text-white font-medium px-5 py-2.5 sm:px-6 sm:py-3 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-sm sm:text-base"
+              className="group bg-accent hover:bg-accent/90 text-white font-medium px-5 py-3 sm:px-6 sm:py-3 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-sm sm:text-base w-full sm:w-auto"
             >
               Get a Free Estimate
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -312,7 +312,7 @@ export default function Hero() {
                   window.history.pushState(null, '', '#projects');
                 }
               }}
-              className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-medium px-5 py-2.5 sm:px-6 sm:py-3 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-sm sm:text-base"
+              className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-medium px-5 py-3 sm:px-6 sm:py-3 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-sm sm:text-base w-full sm:w-auto"
             >
               <Home className="mr-2 h-4 w-4" />
               View Our Projects

@@ -63,7 +63,18 @@ export default function Footer() {
               ].map((service, index) => (
                 <li key={index} className="group flex items-center">
                   <ChevronRight className="h-4 w-4 text-accent mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                  <a href="#services" className="text-gray-300 hover:text-white transition-colors duration-200">
+                  <a 
+                    href="#services" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const servicesSection = document.getElementById('services');
+                      if (servicesSection) {
+                        servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        window.history.pushState(null, '', '#services');
+                      }
+                    }}
+                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                  >
                     {service}
                   </a>
                 </li>
@@ -86,9 +97,21 @@ export default function Footer() {
               ].map((link, index) => (
                 <li key={index} className="group flex items-center">
                   <ChevronRight className="h-4 w-4 text-accent mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                  <Link href={link.href} className="text-gray-300 hover:text-white transition-colors duration-200">
+                  <a 
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const targetId = link.href.substring(1);
+                      const section = document.getElementById(targetId);
+                      if (section) {
+                        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        window.history.pushState(null, '', link.href);
+                      }
+                    }}
+                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                  >
                     {link.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

@@ -81,25 +81,14 @@ export default function Projects() {
 
   return (
     <section id="projects" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
-      {/* Subtle background effect */}
+      {/* Subtle background effect with minimal dots */}
+      <div className="absolute inset-0 bg-pattern-dots opacity-30"></div>
       <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-neutral/30 to-transparent"></div>
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-neutral/30 to-transparent"></div>
       
       {/* Decorative elements */}
       <div className="absolute -left-24 top-1/4 w-48 h-48 rounded-full bg-accent/5 blur-3xl"></div>
       <div className="absolute -right-24 bottom-1/4 w-64 h-64 rounded-full bg-primary/5 blur-3xl"></div>
-      
-      {/* Diagonal pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="diagonalHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
-              <line x1="0" y1="0" x2="0" y2="10" stroke="#D88F2C" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#diagonalHatch)" opacity="0.05" />
-        </svg>
-      </div>
 
       <div className="max-w-screen-xl mx-auto relative">
         <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-16">

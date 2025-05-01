@@ -133,21 +133,9 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-neutral overflow-hidden">
+    <section id="services" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-neutral overflow-hidden bg-subtle-angles">
       {/* Background patterns and effects */}
       <div className="absolute inset-0 -z-10">
-        {/* Dotted background pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-                <circle cx="10" cy="10" r="0.5" fill="#D88F2C" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#smallGrid)" />
-          </svg>
-        </div>
-        
         {/* Blurred circles for visual interest */}
         <div className="absolute -left-20 top-1/3 w-80 h-80 rounded-full bg-accent/5 blur-3xl"></div>
         <div className="absolute -right-20 bottom-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl"></div>

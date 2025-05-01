@@ -32,6 +32,25 @@ export default function Header() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [mobileMenuOpen]);
+  
+  // Add body scroll lock when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      // Prevent scrolling when menu is open
+      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100%';
+    } else {
+      // Re-enable scrolling when menu is closed
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+    }
+    
+    return () => {
+      // Clean up on unmount
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+    };
+  }, [mobileMenuOpen]);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -136,36 +155,49 @@ export default function Header() {
         {/* Mobile Menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
-            <motion.div 
-              id="mobile-menu"
-              className="md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg border border-neutral/10"
-              initial={{ opacity: 0, height: 0, y: -10 }}
-              animate={{ opacity: 1, height: 'auto', y: 0 }}
-              exit={{ opacity: 0, height: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="flex flex-col space-y-1 px-4">
-                {navigationItems.map((item) => (
-                  <Link 
-                    key={item.name}
-                    href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
-                    className="text-primary hover:text-accent hover:bg-neutral/30 transition-colors duration-200 font-medium py-3 px-3 rounded-md flex items-center"
+            <>
+              {/* Backdrop overlay with blur effect */}
+              <motion.div 
+                className="fixed inset-0 bg-primary/20 backdrop-blur-sm z-40"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              
+              <motion.div 
+                id="mobile-menu"
+                className="md:hidden mt-4 py-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg border border-neutral/10 absolute left-4 right-4 z-50"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+              >
+                <div className="flex flex-col space-y-2 px-4">
+                  {navigationItems.map((item) => (
+                    <Link 
+                      key={item.name}
+                      href={item.href}
+                      onClick={(e) => handleNavClick(e, item.href)}
+                      className="text-primary hover:text-accent hover:bg-neutral/30 transition-colors duration-200 font-medium py-3 px-4 rounded-md flex items-center"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  
+                  <div className="h-px bg-neutral/20 my-2"></div>
+                  
+                  <a 
+                    href="tel:+12089990030"
+                    className="flex items-center justify-center space-x-3 bg-accent text-white mt-2 px-4 py-3.5 rounded-md hover:bg-accent/90 transition-colors shadow-sm"
+                    aria-label="Call us at (208) 999-0030"
                   >
-                    {item.name}
-                  </Link>
-                ))}
-                
-                <a 
-                  href="tel:+12089990030"
-                  className="flex items-center justify-center space-x-2 bg-accent text-white mt-3 px-4 py-3 rounded-md hover:bg-accent/90 transition-colors shadow-sm"
-                  aria-label="Call us at (208) 999-0030"
-                >
-                  <Phone className="h-4 w-4" />
-                  <span className="font-medium">(208) 999-0030</span>
-                </a>
-              </div>
-            </motion.div>
+                    <Phone className="h-5 w-5" />
+                    <span className="font-medium">(208) 999-0030</span>
+                  </a>
+                </div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </div>
