@@ -44,10 +44,28 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-neutral">
-      <div className="max-w-screen-xl mx-auto">
+    <section id="about" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-neutral overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="about-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.1" />
+            </pattern>
+            <linearGradient id="about-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#D88F2C" stopOpacity="0.05" />
+              <stop offset="100%" stopColor="#3C3C3C" stopOpacity="0.05" />
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#about-grid)" />
+          <circle cx="10%" cy="30%" r="150" fill="url(#about-gradient)" />
+          <circle cx="90%" cy="70%" r="200" fill="url(#about-gradient)" />
+        </svg>
+      </div>
+
+      <div className="max-w-screen-xl mx-auto relative">
         {/* Company Story & Mission */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -97,12 +115,32 @@ export default function About() {
             
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link href="#contact">
-                <button className="bg-accent hover:bg-accent/90 text-white font-medium px-6 py-3 rounded-md shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center">
+                <button 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      window.history.pushState(null, '', '#contact');
+                    }
+                  }}
+                  className="bg-accent hover:bg-accent/90 text-white font-medium px-6 py-3 rounded-md shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center"
+                >
                   Get in Touch
                 </button>
               </Link>
               <Link href="#team">
-                <button className="border border-primary/20 bg-white text-primary hover:border-primary/50 font-medium px-6 py-3 rounded-md shadow-sm hover:shadow-md transition-all duration-200 flex items-center justify-center">
+                <button 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const teamSection = document.getElementById('team');
+                    if (teamSection) {
+                      teamSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      window.history.pushState(null, '', '#team');
+                    }
+                  }}
+                  className="border border-primary/20 bg-white text-primary hover:border-primary/50 font-medium px-6 py-3 rounded-md shadow-sm hover:shadow-md transition-all duration-200 flex items-center justify-center"
+                >
                   Meet Our Team
                 </button>
               </Link>

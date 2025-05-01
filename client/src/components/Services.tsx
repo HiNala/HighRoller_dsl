@@ -23,9 +23,12 @@ const ServiceCard = ({ icon, title, description, features, delay = 0 }: ServiceC
       className="h-full"
     >
       <Card 
-        className="h-full overflow-hidden border border-gray-100 bg-white hover:shadow-md transition-all duration-300 group"
+        className="h-full overflow-hidden border border-gray-100 bg-white hover:shadow-md transition-all duration-300 group relative z-10"
       >
-        <div className="flex flex-col h-full">
+        {/* Inner glow when hovered */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-accent/0 to-primary/0 opacity-0 group-hover:opacity-5 transition-opacity duration-500 z-0"></div>
+        
+        <div className="flex flex-col h-full relative z-10">
           {/* Card header with icon and title */}
           <div className="bg-primary/5 p-6 group-hover:bg-primary/10 transition-colors duration-300">
             <div className="flex items-center gap-4">
@@ -130,8 +133,27 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-neutral">
-      <div className="max-w-screen-xl mx-auto">
+    <section id="services" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-neutral overflow-hidden">
+      {/* Background patterns and effects */}
+      <div className="absolute inset-0 -z-10">
+        {/* Dotted background pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="10" cy="10" r="0.5" fill="#D88F2C" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#smallGrid)" />
+          </svg>
+        </div>
+        
+        {/* Blurred circles for visual interest */}
+        <div className="absolute -left-20 top-1/3 w-80 h-80 rounded-full bg-accent/5 blur-3xl"></div>
+        <div className="absolute -right-20 bottom-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-screen-xl mx-auto relative">
         <div className="text-center mb-16">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -146,14 +168,16 @@ export default function Services() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-primary mb-4">
               Comprehensive <span className="text-accent">Construction</span> Services
             </h2>
-            <div className="w-24 h-1 bg-accent mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-accent mx-auto mb-6 relative">
+              <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-accent rounded-full"></div>
+            </div>
             <p className="text-lg text-gray-600">
               Specializing in residential remodeling projects, we transform kitchens, bathrooms, and living spaces to make your dream home a reality, with attention to detail and exceptional craftsmanship.
             </p>
           </motion.div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => (
             <ServiceCard 
               key={index}
@@ -175,9 +199,18 @@ export default function Services() {
         >
           <a 
             href="#contact" 
-            className="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-md shadow-md inline-flex items-center font-medium transition-all duration-300"
+            onClick={(e) => {
+              e.preventDefault();
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                window.history.pushState(null, '', '#contact');
+              }
+            }}
+            className="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-md shadow-md inline-flex items-center font-medium transition-all duration-300 relative overflow-hidden group"
           >
-            Request a Quote
+            <span className="relative z-10">Request a Quote</span>
+            <span className="absolute inset-0 bg-gradient-to-r from-accent to-accent/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-0"></span>
           </a>
         </motion.div>
       </div>

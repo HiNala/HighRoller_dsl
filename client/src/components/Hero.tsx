@@ -54,11 +54,12 @@ function ScrollIndicator() {
 }
 
 export default function Hero() {
-  // Background images for the slideshow
+  // Background images for the slideshow - construction-specific high-quality images
   const backgroundImages = [
-    "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80", // Original image
-    "https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?ixlib=rb-1.2.1&auto=format&fit=crop&w=2071&q=80", // Construction workers
-    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80"  // House exterior
+    "https://images.unsplash.com/photo-1541971897566-308cf7ad0e3c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80", // Completed home with construction team
+    "https://images.unsplash.com/photo-1621348321688-64935e914f9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80", // Modern building construction with crane
+    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80", // Custom built home exterior
+    "https://images.unsplash.com/photo-1554435493-93422e8d1c46?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80"    // Interior renovation in progress
   ];
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -103,6 +104,22 @@ export default function Hero() {
       
       {/* Darker overlay with gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/60 backdrop-blur-[1px]"></div>
+      
+      {/* Slideshow indicator dots */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
+        {backgroundImages.map((_, index) => (
+          <button 
+            key={index}
+            onClick={() => setCurrentImageIndex(index)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              index === currentImageIndex 
+                ? 'bg-accent w-4' 
+                : 'bg-white/50 hover:bg-white/70'
+            }`}
+            aria-label={`View slide ${index + 1}`}
+          />
+        ))}
+      </div>
       
       <div className="relative z-10 h-full container mx-auto flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl text-center">

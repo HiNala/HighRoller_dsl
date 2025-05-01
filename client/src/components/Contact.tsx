@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, Send, CheckCircle2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, Send, CheckCircle2, ExternalLink } from 'lucide-react';
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -57,9 +57,9 @@ export default function Contact() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-          {/* Contact Form - Takes 3 columns */}
-          <div className="lg:col-span-3 bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          {/* Contact Form */}
+          <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
             <div className="p-8">
               <h3 className="text-2xl font-display font-semibold text-primary mb-3">Send Us a Message</h3>
               <p className="text-gray-600 mb-6">
@@ -176,119 +176,129 @@ export default function Contact() {
             </div>
           </div>
           
-          {/* Contact Info and Map - Takes 2 columns */}
-          <div className="lg:col-span-2 space-y-8">
-            {/* Contact Info and Map in a single container */}
-            <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
-              {/* Contact Information */}
-              <div className="p-8">
-                <h3 className="text-xl font-display font-semibold text-primary mb-6">Contact Information</h3>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="bg-accent/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
-                      <MapPin className="h-5 w-5 text-accent" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-primary text-base mb-1">Address</h4>
-                      <address className="not-italic text-gray-600 text-sm">
-                        13601 W McMillan Rd Suite#102-268<br />
-                        Boise, ID 83713
-                      </address>
-                    </div>
+          {/* Contact Information */}
+          <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
+            <div className="p-8">
+              <h3 className="text-2xl font-display font-semibold text-primary mb-6">Contact Information</h3>
+              
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="bg-accent/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
+                    <MapPin className="h-5 w-5 text-accent" />
                   </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-accent/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
-                      <Phone className="h-5 w-5 text-accent" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-primary text-base mb-1">Phone</h4>
-                      <p className="text-sm">
-                        <a href="tel:+12089990030" className="text-gray-600 hover:text-accent transition-colors">
-                          (208) 999-0030
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-accent/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
-                      <Mail className="h-5 w-5 text-accent" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-primary text-base mb-1">Email</h4>
-                      <p className="text-sm">
-                        <a href="mailto:info@morrisonconstruction.com" className="text-gray-600 hover:text-accent transition-colors break-all">
-                          info@morrisonconstruction.com
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-accent/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
-                      <Clock className="h-5 w-5 text-accent" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-primary text-base mb-1">Business Hours</h4>
-                      <div className="text-gray-600 text-sm">
-                        <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                        <p>Saturday - Sunday: Closed</p>
-                      </div>
-                    </div>
+                  <div>
+                    <h4 className="font-medium text-primary text-base mb-1">Address</h4>
+                    <address className="not-italic text-gray-600 text-sm">
+                      13601 W McMillan Rd Suite#102-268<br />
+                      Boise, ID 83713
+                    </address>
                   </div>
                 </div>
                 
-                <div className="mt-8 pt-6 border-t border-gray-100">
-                  <h4 className="font-medium text-primary mb-4">Follow Us</h4>
-                  <div className="flex space-x-3">
-                    <a 
-                      href="https://facebook.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="bg-accent/10 hover:bg-accent p-2.5 rounded-lg transition-colors duration-300 text-accent hover:text-white" 
-                      aria-label="Follow us on Facebook"
-                    >
-                      <Facebook className="h-4 w-4" />
-                    </a>
-                    <a 
-                      href="https://instagram.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="bg-accent/10 hover:bg-accent p-2.5 rounded-lg transition-colors duration-300 text-accent hover:text-white" 
-                      aria-label="Follow us on Instagram"
-                    >
-                      <Instagram className="h-4 w-4" />
-                    </a>
-                    <a 
-                      href="https://linkedin.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="bg-accent/10 hover:bg-accent p-2.5 rounded-lg transition-colors duration-300 text-accent hover:text-white" 
-                      aria-label="Connect with us on LinkedIn"
-                    >
-                      <Linkedin className="h-4 w-4" />
-                    </a>
+                <div className="flex items-start">
+                  <div className="bg-accent/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
+                    <Phone className="h-5 w-5 text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-primary text-base mb-1">Phone</h4>
+                    <p className="text-sm">
+                      <a href="tel:+12089990030" className="text-gray-600 hover:text-accent transition-colors">
+                        (208) 999-0030
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="bg-accent/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
+                    <Mail className="h-5 w-5 text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-primary text-base mb-1">Email</h4>
+                    <p className="text-sm">
+                      <a href="mailto:info@morrisonconstruction.com" className="text-gray-600 hover:text-accent transition-colors break-all">
+                        info@morrisonconstruction.com
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="bg-accent/10 p-2.5 rounded-lg mr-4 flex-shrink-0">
+                    <Clock className="h-5 w-5 text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-primary text-base mb-1">Business Hours</h4>
+                    <div className="text-gray-600 text-sm">
+                      <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                      <p>Saturday - Sunday: Closed</p>
+                    </div>
                   </div>
                 </div>
               </div>
               
-              {/* Map */}
-              <div className="h-[300px] w-full border-t border-gray-100">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.9681532576507!2d-116.30849242345045!3d43.61513905433177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54ae56bc1fb5b5d9%3A0x77f9f13ffb44b2c!2s13601%20W%20McMillan%20Rd%2C%20Boise%2C%20ID%2083713!5e0!3m2!1sen!2sus!4v1714605348905!5m2!1sen!2sus" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Morrison Construction Location"
-                  className="w-full h-full"
-                />
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <h4 className="font-medium text-primary mb-4">Follow Us</h4>
+                <div className="flex space-x-3">
+                  <a 
+                    href="https://facebook.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bg-accent/10 hover:bg-accent p-2.5 rounded-lg transition-colors duration-300 text-accent hover:text-white" 
+                    aria-label="Follow us on Facebook"
+                  >
+                    <Facebook className="h-4 w-4" />
+                  </a>
+                  <a 
+                    href="https://instagram.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bg-accent/10 hover:bg-accent p-2.5 rounded-lg transition-colors duration-300 text-accent hover:text-white" 
+                    aria-label="Follow us on Instagram"
+                  >
+                    <Instagram className="h-4 w-4" />
+                  </a>
+                  <a 
+                    href="https://linkedin.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bg-accent/10 hover:bg-accent p-2.5 rounded-lg transition-colors duration-300 text-accent hover:text-white" 
+                    aria-label="Connect with us on LinkedIn"
+                  >
+                    <Linkedin className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+        
+        {/* Map as a standalone card */}
+        <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
+          <div className="p-6 flex flex-col sm:flex-row justify-between items-center border-b border-gray-100">
+            <h3 className="text-2xl font-display font-semibold text-primary mb-2 sm:mb-0">Find Us</h3>
+            <a 
+              href="https://maps.google.com/?q=13601+W+McMillan+Rd+Suite+102-268+Boise+ID+83713" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center text-accent hover:text-accent/80 text-sm font-medium"
+            >
+              Open in Google Maps
+              <ExternalLink className="ml-1 h-3 w-3" />
+            </a>
+          </div>
+          <div className="h-[400px] w-full">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.9681532576507!2d-116.30849242345045!3d43.61513905433177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54ae56bc1fb5b5d9%3A0x77f9f13ffb44b2c!2s13601%20W%20McMillan%20Rd%2C%20Boise%2C%20ID%2083713!5e0!3m2!1sen!2sus!4v1714605348905!5m2!1sen!2sus" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Morrison Construction Location"
+              className="w-full h-full"
+            />
           </div>
         </div>
       </div>

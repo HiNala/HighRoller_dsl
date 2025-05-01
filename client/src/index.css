@@ -60,10 +60,22 @@
   body {
     @apply antialiased bg-neutral text-primary;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
+  }
+  
+  /* Better mobile scrolling */
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Improved focus styles for accessibility */
+  :focus-visible {
+    @apply outline-accent ring-accent ring-offset-2 ring-offset-white ring-2;
   }
 }
 
@@ -74,6 +86,44 @@
 
   .font-sans {
     font-family: 'Inter', sans-serif;
+  }
+  
+  /* Section spacing utilities */
+  .section-spacing {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  /* Background pattern utility */
+  .bg-pattern-grid {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1v38h38V1H1z' fill='%233C3C3C' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  
+  .bg-pattern-dots {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='1' fill='%23D88F2C' fill-opacity='0.1'/%3E%3C/svg%3E");
+  }
+  
+  /* Hover effect utilities */
+  .hover-lift {
+    @apply transition-transform duration-300;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1;
+  }
+  
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    .container {
+      @apply px-4;
+    }
+    
+    h1 {
+      @apply text-3xl;
+    }
+    
+    h2 {
+      @apply text-2xl;
+    }
   }
 }
 
@@ -96,4 +146,40 @@
 .bg-image-overlay > * {
   position: relative;
   z-index: 2;
+}
+
+/* Accent glow effects */
+.accent-glow {
+  position: relative;
+}
+
+.accent-glow::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: -5px;
+  left: 0;
+  background: #D88F2C;
+  opacity: 0.15;
+  filter: blur(10px);
+  z-index: -1;
+  border-radius: 100%;
+}
+
+/* Subtle animations for backgrounds */
+@keyframes subtle-shift {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-5px) translateX(5px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.animate-subtle {
+  animation: subtle-shift 10s ease-in-out infinite;
 }

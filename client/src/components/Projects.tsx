@@ -80,8 +80,28 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-screen-xl mx-auto">
+    <section id="projects" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+      {/* Subtle background effect */}
+      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-neutral/30 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-neutral/30 to-transparent"></div>
+      
+      {/* Decorative elements */}
+      <div className="absolute -left-24 top-1/4 w-48 h-48 rounded-full bg-accent/5 blur-3xl"></div>
+      <div className="absolute -right-24 bottom-1/4 w-64 h-64 rounded-full bg-primary/5 blur-3xl"></div>
+      
+      {/* Diagonal pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="diagonalHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="0" x2="0" y2="10" stroke="#D88F2C" strokeWidth="0.5" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#diagonalHatch)" opacity="0.05" />
+        </svg>
+      </div>
+
+      <div className="max-w-screen-xl mx-auto relative">
         <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-16">
           <motion.div 
             className="max-w-2xl"
@@ -103,7 +123,7 @@ export default function Projects() {
           </motion.div>
           
           <motion.div 
-            className="order-first md:order-last flex items-center"
+            className="order-first md:order-last self-start md:self-end"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -178,6 +198,14 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
         >
           <button 
+            onClick={() => {
+              // This would typically link to a full portfolio page
+              // For now, just scroll to top of projects section
+              const projectsSection = document.getElementById('projects');
+              if (projectsSection) {
+                projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
             className="group bg-primary hover:bg-accent text-white font-medium px-8 py-3 rounded-md shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center"
             aria-label="View all projects in our portfolio"
           >
