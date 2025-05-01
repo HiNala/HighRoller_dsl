@@ -6,32 +6,32 @@ export default function Services() {
   const services = [
     {
       icon: <Home className="h-6 w-6 text-accent" />,
-      title: "Custom Home Construction",
-      description: "From design collaboration to final walkthrough, we build your dream home with meticulous attention to detail.",
+      title: "Kitchen Remodels",
+      description: "Transform your kitchen into a beautiful and functional space with our expert design and construction services.",
       features: [
-        "Architectural design collaboration",
-        "Premium material selection",
-        "Energy-efficient construction"
+        "Custom cabinetry and countertops",
+        "Modern appliance integration",
+        "Open concept designs"
       ]
     },
     {
       icon: <Building className="h-6 w-6 text-accent" />,
-      title: "Commercial Construction",
-      description: "Creating functional, impressive commercial spaces that enhance productivity and represent your brand.",
+      title: "Bathroom Remodels",
+      description: "Create a spa-like retreat with our bathroom renovation services that blend luxury and practicality.",
       features: [
-        "Office buildings & retail spaces",
-        "Restaurants & hospitality",
-        "Medical & specialized facilities"
+        "Custom showers and tubs",
+        "Vanity and storage solutions", 
+        "Tile work and fixtures"
       ]
     },
     {
       icon: <Puzzle className="h-6 w-6 text-accent" />,
-      title: "Renovations & Remodeling",
-      description: "Transforming existing structures with modern updates while preserving character and enhancing functionality.",
+      title: "Additions & Outdoor Living",
+      description: "Expand your living space with beautiful additions and outdoor areas that enhance your lifestyle and home value.",
       features: [
-        "Kitchen & bathroom remodels",
-        "Whole-home renovations",
-        "Historic property restoration"
+        "Room additions and expansions",
+        "Custom decks and patios",
+        "Outdoor kitchens and living spaces"
       ]
     }
   ];
@@ -57,7 +57,7 @@ export default function Services() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl md:text-4xl font-display font-semibold text-primary mb-4">Our Services</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">From custom homes to commercial developments, we offer comprehensive construction services tailored to your needs.</p>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">Specializing in residential remodeling projects, we transform kitchens, bathrooms, and outdoor living spaces to make your dream home a reality.</p>
         </motion.div>
         
         <motion.div 

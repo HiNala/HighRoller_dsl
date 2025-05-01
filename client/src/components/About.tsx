@@ -13,9 +13,9 @@ export default function About() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl md:text-4xl font-display font-semibold text-primary mb-6">Our Story</h2>
-            <p className="text-gray-600 mb-4">Founded in 2010, Morrison Construction began with a simple mission: to build quality structures that stand the test of time while providing exceptional client service.</p>
-            <p className="text-gray-600 mb-4">What started as a small family business has grown into one of Idaho's most trusted construction firms, completing over 200 projects across the state.</p>
-            <p className="text-gray-600 mb-6">Our team brings decades of combined experience, local knowledge, and a passion for craftsmanship to every project we undertake.</p>
+            <p className="text-gray-600 mb-4">"Morrison Construction is a full service residential company specializing in kitchen & bathroom remodels, additions, and outdoor living spaces (decks, kitchens, etc.) as well as design services."</p>
+            <p className="text-gray-600 mb-4">Micah and Jacci Morrison hold Bachelor's degrees in Construction Management & Interior Design which combined with over 30 years of experience makes them a great team ready to make their clients dreams come true.</p>
+            <p className="text-gray-600 mb-6">Our team brings decades of combined experience, local knowledge, and a passion for craftsmanship to every project we undertake in the Boise area.</p>
             
             <div className="flex items-center space-x-4 mb-8">
               <div className="flex space-x-1">

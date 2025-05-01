@@ -76,11 +76,13 @@ export default function Contact() {
                   name="projectType" 
                   className="w-full border border-border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-white"
                   required
+                  defaultValue=""
                 >
-                  <option value="" disabled selected>Select project type</option>
-                  <option value="residential">Residential Construction</option>
-                  <option value="commercial">Commercial Construction</option>
-                  <option value="remodel">Renovation/Remodel</option>
+                  <option value="" disabled>Select project type</option>
+                  <option value="kitchen">Kitchen Remodel</option>
+                  <option value="bathroom">Bathroom Remodel</option>
+                  <option value="addition">Room Addition</option>
+                  <option value="outdoor">Outdoor Living Space</option>
                   <option value="other">Other</option>
                 </select>
               </div>
@@ -124,7 +126,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium text-primary">Address</h4>
-                    <p className="text-gray-600">1234 Construction Way<br />Boise, ID 83702</p>
+                    <p className="text-gray-600">13601 W McMillan Rd Suite#102-268<br />Boise, ID 83713</p>
                   </div>
                 </div>
                 
@@ -134,7 +136,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium text-primary">Phone</h4>
-                    <p className="text-gray-600">(208) 555-1234</p>
+                    <p className="text-gray-600">(208) 999-0030</p>
                   </div>
                 </div>
                 
@@ -154,7 +156,10 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium text-primary">Hours</h4>
-                    <p className="text-gray-600">Monday - Friday: 8:00 AM - 5:00 PM<br />Saturday: By appointment</p>
+                    <p className="text-gray-600">
+                      Monday - Friday: 8:00 AM - 6:00 PM<br />
+                      Saturday - Sunday: Closed
+                    </p>
                   </div>
                 </div>
               </div>
@@ -176,13 +181,14 @@ export default function Contact() {
             </div>
             
             <div className="bg-white p-6 rounded-2xl shadow-md h-60 md:h-80">
-              {/* Google Maps embed would go here */}
-              <div className="bg-gray-200 w-full h-full rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-10 w-10 text-gray-400 mx-auto mb-2" />
-                  <span className="text-gray-500">Google Map Integration</span>
-                </div>
-              </div>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.9681532576507!2d-116.30849242345045!3d43.61513905433177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54ae56bc1fb5b5d9%3A0x77f9f13ffb44b2c!2s13601%20W%20McMillan%20Rd%2C%20Boise%2C%20ID%2083713!5e0!3m2!1sen!2sus!4v1714605348905!5m2!1sen!2sus" 
+                className="w-full h-full rounded-lg border-0" 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Morrison Construction Location"
+              ></iframe>
             </div>
           </motion.div>
         </div>
