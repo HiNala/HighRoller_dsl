@@ -121,7 +121,7 @@ export default function Header() {
                 key={item.name} 
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-primary hover:text-accent relative text-sm font-medium tracking-wide transition-colors duration-200 py-2"
+                className="text-primary hover:text-accent relative text-base font-medium tracking-wide transition-colors duration-200 py-2"
               >
                 {item.name}
                 <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-accent scale-x-0 transition-transform origin-left hover:scale-x-100"></span>
@@ -179,7 +179,7 @@ export default function Header() {
                       key={item.name}
                       href={item.href}
                       onClick={(e) => handleNavClick(e, item.href)}
-                      className="text-primary hover:text-accent hover:bg-neutral/30 transition-colors duration-200 font-medium py-3 px-4 rounded-md flex items-center"
+                      className="text-primary hover:text-accent hover:bg-neutral/30 transition-colors duration-200 font-medium py-3 px-4 rounded-md flex items-center text-lg"
                     >
                       {item.name}
                     </Link>

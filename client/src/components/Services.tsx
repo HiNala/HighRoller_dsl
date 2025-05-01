@@ -55,32 +55,32 @@ export default function Services() {
     {
       icon: <Home className="h-6 w-6" />,
       title: "Custom Home Builds",
-      description: "Bring your vision to life with a home that's 100% you—inside and out."
+      description: "Bring your vision to life with a home that's 100% you—inside and out. From foundation to finishing touches, we implement premium building techniques with energy-efficient materials. Our team of skilled craftsmen ensures structural integrity while incorporating your personal style into every detail."
     },
     {
       icon: <Hammer className="h-6 w-6" />,
       title: "Whole-Home Remodels",
-      description: "Reimagine your space: contemporary, efficient, and perfectly yours."
+      description: "Reimagine your space: contemporary, efficient, and perfectly yours. Our renovation process addresses structural improvements, modernizes outdated systems, and enhances flow between living areas. We preserve your home's character while upgrading insulation and electrical systems for a harmonious blend of form and function."
     },
     {
       icon: <UtensilsCrossed className="h-6 w-6" />,
       title: "Kitchen Transformations",
-      description: "Cook, entertain, and connect in a kitchen designed for your lifestyle."
+      description: "Cook, entertain, and connect in a kitchen designed for your lifestyle. We specialize in open-concept renovations with custom cabinetry and professional-grade appliance installation. Our meticulous plumbing and electrical work ensures your kitchen is as functional as it is beautiful."
     },
     {
       icon: <Bath className="h-6 w-6" />,
       title: "Bathroom Retreats",
-      description: "Relax and recharge with spa-inspired designs and luxury fixtures."
+      description: "Relax and recharge with spa-inspired designs and luxury fixtures. Our bathroom renovations include expert waterproofing, precision tile work, and efficient plumbing installation. We integrate modern conveniences with elegant design elements, using moisture-resistant materials to ensure longevity."
     },
     {
       icon: <Warehouse className="h-6 w-6" />,
       title: "Basement Finishes",
-      description: "Unlock bonus living space—home theater, gym, or guest suite."
+      description: "Unlock bonus living space—home theater, gym, or guest suite. Our basement refinishing includes professional framing, moisture control, and proper insulation techniques for comfortable, code-compliant spaces. We address crucial infrastructure while transforming underutilized square footage into your family's favorite area."
     },
     {
       icon: <Palmtree className="h-6 w-6" />,
       title: "Outdoor Kitchens & Living",
-      description: "Extend your living space into the fresh Idaho air and make every season memorable."
+      description: "Extend your living space into the fresh Idaho air and make every season memorable. We construct weather-resistant structures with durable hardscaping designed to withstand Boise's climate. From integrated gas lines to frost-proof plumbing, we create seamless transitions between indoor comfort and outdoor enjoyment."
     }
   ];
 
