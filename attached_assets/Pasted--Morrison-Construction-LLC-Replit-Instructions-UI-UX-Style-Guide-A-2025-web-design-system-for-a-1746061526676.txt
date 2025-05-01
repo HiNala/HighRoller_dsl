@@ -1,0 +1,212 @@
+✅ Morrison Construction LLC — Replit Instructions & UI/UX Style Guide
+A 2025 web design system for a standout Idaho-based construction company.
+
+🧠 REPLIT AGENT INSTRUCTIONS (INITIAL SETUP)
+1. Create the Next.js 15 Project with TypeScript
+bash
+Copy
+Edit
+npx create-next-app@latest morrison-construction --app --ts --tailwind
+cd morrison-construction
+✅ Use App Router and enable src/ directory during setup.
+
+2. Install UI Libraries
+bash
+Copy
+Edit
+npm install framer-motion lucide-react clsx
+Install shadcn/ui:
+
+bash
+Copy
+Edit
+npx shadcn-ui@latest init
+npx shadcn-ui@latest add button card input navigation-menu
+3. Configure Tailwind Theme in tailwind.config.ts
+ts
+Copy
+Edit
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./src/**/*.{ts,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: '#3C3C3C',    // Charcoal Gray
+        accent: '#D88F2C',     // Earthy Amber
+        neutral: '#F5F5F5',    // Bone White
+        dark: '#1F1F1F',
+        light: '#FFFFFF',
+        border: '#E5E7EB',
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        display: ['Playfair Display', 'serif'],
+      },
+      borderRadius: {
+        xl: '1rem',
+        '2xl': '1.5rem',
+      },
+    },
+  },
+  plugins: [],
+};
+export default config;
+4. Set Global Fonts in app/layout.tsx
+tsx
+Copy
+Edit
+import "./globals.css";
+import { Inter, Playfair_Display } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-display" });
+
+export const metadata = {
+  title: "Morrison Construction LLC",
+  description: "Building Boise Better – Residential & Commercial Excellence",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <body className="bg-neutral text-primary">{children}</body>
+    </html>
+  );
+}
+🎨 DESIGN LANGUAGE
+✅ Color Palette
+Name	HEX	Usage
+Primary	#3C3C3C	Text, Headlines, Footers
+Accent	#D88F2C	CTA buttons, Highlights
+Neutral	#F5F5F5	Backgrounds, Sections
+Border	#E5E7EB	Card borders, inputs
+White	#FFFFFF	Base background, light content
+Black	#1F1F1F	Overlays, footer contrast
+
+✅ Typography
+Use	Font	Class Example
+Headings	Playfair Display	font-display text-4xl
+Body/Text	Inter	font-sans text-base
+
+Title Examples:
+
+tsx
+Copy
+Edit
+<h1 className="text-5xl font-display text-primary leading-tight">Building Boise Better</h1>
+<p className="text-lg text-gray-700 font-sans">We specialize in high-quality residential and commercial construction across Idaho.</p>
+🧩 UI COMPONENTS & BEHAVIOR
+🔘 Buttons
+tsx
+Copy
+Edit
+<button className="bg-accent text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-primary transition-all duration-200">
+  Get a Free Estimate
+</button>
+🧭 Navbar
+Fixed top: sticky top-0 z-50
+
+Semi-transparent scroll: backdrop-blur bg-white/70 shadow-sm
+
+Mobile responsive: Hamburger menu at md
+
+🏗️ Hero Section
+Full screen h-screen flex items-center justify-center
+
+Background image or subtle looping construction site video
+
+Large text & strong CTA
+
+tsx
+Copy
+Edit
+<section className="h-screen bg-[url('/hero.jpg')] bg-cover bg-center relative">
+  <div className="absolute inset-0 bg-black/40" />
+  <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
+    <h1 className="text-5xl md:text-6xl font-display mb-6">We Build Idaho</h1>
+    <button className="bg-accent hover:bg-primary px-6 py-3 text-lg font-semibold rounded-full transition">Schedule Consultation</button>
+  </div>
+</section>
+🧱 Cards
+Use in projects, services, and testimonials
+
+tsx
+Copy
+Edit
+<div className="bg-white rounded-2xl shadow-md hover:shadow-lg p-6 space-y-3">
+  <h3 className="text-xl font-semibold text-primary">Custom Homes</h3>
+  <p className="text-gray-600">Designed and built to match your vision, with quality at every step.</p>
+</div>
+📋 Forms
+tsx
+Copy
+Edit
+<form className="space-y-6 bg-white p-6 rounded-xl shadow-md">
+  <input type="text" placeholder="Name" className="w-full border border-border p-4 rounded-md focus:outline-accent" />
+  <textarea placeholder="Project Details" className="w-full border border-border p-4 rounded-md h-32" />
+  <button className="bg-accent text-white px-6 py-3 rounded-full hover:bg-primary">Submit</button>
+</form>
+🧭 CORE PAGES & STRUCTURE
+app/page.tsx – Home
+Hero
+
+“Why Morrison” section (3 benefit cards)
+
+Featured Projects grid
+
+Testimonials
+
+CTA banner
+
+app/projects/page.tsx
+Masonry or Grid
+
+Use aspect-video, object-cover, rounded-lg
+
+Filter buttons: Residential, Commercial, Remodels
+
+app/about/page.tsx
+Timeline of company history
+
+Photos of the founders, local staff
+
+Certifications & memberships
+
+app/contact/page.tsx
+Map Embed (Google Maps iframe)
+
+Contact form
+
+Email/phone/social CTA
+
+✨ INTERACTIONS
+Element	Behavior Example
+Buttons	hover:bg-primary + transition duration-200
+Cards	hover:scale-[1.01] + hover:shadow-lg
+Navigation	backdrop-blur sticky top-0 z-50
+Animations	Use framer-motion for fade/slide-in sections
+
+📈 SEO & PERFORMANCE
+Use <Image> component from next/image
+
+Add meta tags in app/layout.tsx and next-seo.config.js (optional)
+
+Lazy load components and images
+
+Use semantic HTML (e.g., <section>, <article>, <header>)
+
+🧑‍🎨 DESIGN NOTES
+Keep layout wide but not full-screen (max-w-screen-xl mx-auto)
+
+Emphasize Idaho craftsmanship and regional pride
+
+Icons: use Lucide (import { Hammer } from "lucide-react")
+
+Use lots of white space for breathing room
+
+No overwhelming animations — calm, clean, and professional
+
